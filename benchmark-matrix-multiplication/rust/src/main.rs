@@ -1,10 +1,13 @@
 use std::time::Instant;
 
+
+// To run this benchmark, use the following command in the terminal:
+// cargo run --release
 fn main() {
     let n = 1000;
 
-    let mut a = vec![vec![1.0f64; n]; n];
-    let mut b = vec![vec![2.0f64; n]; n];
+    let a = vec![vec![1.0f64; n]; n];
+    let b = vec![vec![2.0f64; n]; n];
     let mut c = vec![vec![0.0f64; n]; n];
 
     let start = Instant::now();
@@ -21,7 +24,5 @@ fn main() {
 
     let duration = start.elapsed();
     println!("Rust matrix multiply: {:?}", duration);
-
-    // zapobiega optymalizacji (użycie wyniku)
     println!("checksum: {}", c[0][0]);
 }

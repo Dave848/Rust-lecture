@@ -5,6 +5,8 @@
 using namespace std;
 using namespace std::chrono;
 
+// To compile this benchmark, use the following command in the terminal:
+// g++ -O3 -march=native -DNDEBUG main.cpp -o bench
 int main() {
     int n = 1000;
 
@@ -30,6 +32,5 @@ int main() {
          << duration_cast<milliseconds>(end - start).count()
          << " ms\n";
 
-    // checksum
     cout << "checksum: " << c[0][0] << endl;
 }
